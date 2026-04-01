@@ -4,7 +4,6 @@
 /// ```toml
 /// fastemporal = { version = "0.1", features = ["wasm"] }
 /// ```
-
 #[cfg(feature = "wasm")]
 mod wasm_impl {
     use wasm_bindgen::prelude::*;

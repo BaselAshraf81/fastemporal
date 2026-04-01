@@ -28,3 +28,5 @@ node_modules/
 package-lock.json
 criterion_results/
 *.profdata
+
+setup_env.ps1

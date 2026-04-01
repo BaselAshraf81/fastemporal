@@ -1,8 +1,8 @@
 #![allow(missing_docs)]
-/// Pure calendar-math utilities.  No allocations, no I/O.
-///
-/// All algorithms are based on Howard Hinnant's public-domain
-/// "chrono-Compatible Low-Level Date Algorithms" paper.
+//! Pure calendar-math utilities.  No allocations, no I/O.
+//!
+//! All algorithms are based on Howard Hinnant's public-domain
+//! "chrono-Compatible Low-Level Date Algorithms" paper.
 
 // ─── Leap-year / days-in-month ───────────────────────────────────────────────
 

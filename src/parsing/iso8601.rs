@@ -255,7 +255,7 @@ fn parse_offset_and_tz(p: &mut Parser<'_>) -> Result<(Option<i32>, Option<heaple
             let om = if p.peek() == Some(b':') {
                 p.eat();
                 p.digits(2)? as i32
-            } else if p.peek().map_or(false, |b| b.is_ascii_digit()) {
+            } else if p.peek().is_some_and(|b| b.is_ascii_digit()) {
                 p.digits(2)? as i32
             } else {
                 0
@@ -269,7 +269,7 @@ fn parse_offset_and_tz(p: &mut Parser<'_>) -> Result<(Option<i32>, Option<heaple
     if p.peek() == Some(b'[') {
         p.eat();
         let start = p.pos;
-        while p.peek().map_or(false, |b| b != b']') {
+        while p.peek().is_some_and(|b| b != b']') {
             p.eat();
         }
         let tz_bytes = &p.src[start..p.pos];

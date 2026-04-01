@@ -66,6 +66,27 @@ impl core::fmt::Display for TzName {
     }
 }
 
+#[cfg(feature = "serde")]
+impl serde::Serialize for TzName {
+    fn serialize<S>(&self, serializer: S) -> core::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        serializer.serialize_str(self.as_str())
+    }
+}
+
+#[cfg(feature = "serde")]
+impl<'de> serde::Deserialize<'de> for TzName {
+    fn deserialize<D>(deserializer: D) -> core::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        let s = <&str>::deserialize(deserializer)?;
+        TzName::new(s).ok_or_else(|| serde::de::Error::custom("timezone name too long"))
+    }
+}
+
 // ─── Resolution ──────────────────────────────────────────────────────────────
 
 use crate::error::{Error, Result};
