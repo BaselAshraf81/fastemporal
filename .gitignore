@@ -1,10 +1,12 @@
 # Rust
 /target
-Cargo.lock
 
 # Node.js
 node_modules/
 package-lock.json
+
+# MSVC toolchain
+msvc/
 
 # Benchmark results
 luxon_results.txt
@@ -21,12 +23,5 @@ luxon.txt
 .DS_Store
 Thumbs.db
 
-msvc/
-
-node_modules/
-
-package-lock.json
-criterion_results/
-*.profdata
-
+# Environment setup script
 setup_env.ps1
