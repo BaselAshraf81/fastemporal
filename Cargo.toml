@@ -1,0 +1,36 @@
+[package]
+name        = "fastemporal"
+version     = "0.1.0"
+edition     = "2021"
+description = "Luxon + Temporal, but in pure Rust — 100× faster, zero GC"
+license     = "MIT OR Apache-2.0"
+repository  = "https://github.com/YOUR_HANDLE/fastemporal"
+keywords    = ["datetime", "temporal", "luxon", "timezone", "wasm"]
+categories  = ["date-and-time", "wasm"]
+rust-version = "1.75"
+
+[features]
+default     = ["tz-embedded"]
+tz-embedded = ["dep:jiff"]
+tz-system   = ["dep:jiff"]
+wasm        = ["dep:wasm-bindgen", "tz-embedded"]
+serde       = ["dep:serde"]
+
+[dependencies]
+# jiff provides the TZif parser + bundled IANA timezone data.
+# All calendar arithmetic, ISO 8601 parsing, and strftime formatting
+# are implemented from scratch with zero allocations in hot paths.
+jiff         = { version = "0.2", optional = true, default-features = false, features = ["tzdb-bundle-always", "std"] }
+wasm-bindgen = { version = "0.2", optional = true }
+serde        = { version = "1",   optional = true, features = ["derive"] }
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[bench]]
+name    = "datetime"
+harness = false
+
+[[bin]]
+name = "shadow_test"
+path = "bin/shadow_test.rs"
