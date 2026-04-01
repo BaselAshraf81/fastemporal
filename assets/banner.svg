@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="900" height="240">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e85d04"/>
+      <stop offset="100%" style="stop-color:#f48c06"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="240" fill="url(#bg)" rx="12"/>
+  <rect x="0" y="0" width="4" height="240" fill="url(#accent)" rx="2"/>
+  <line x1="0" y1="60" x2="900" y2="60" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="0" y1="120" x2="900" y2="120" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="0" y1="180" x2="900" y2="180" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="240" stroke="#ffffff08" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="240" stroke="#ffffff08" stroke-width="1"/>
+  <text x="36" y="80" font-family="monospace" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="-1">fast</text>
+  <text x="131" y="80" font-family="monospace" font-size="44" font-weight="700" fill="#e85d04" letter-spacing="-1">temporal</text>
+  <text x="36" y="114" font-family="monospace" font-size="13" fill="#8b949e">Luxon + Temporal · pure Rust · zero GC · up to 216x faster</text>
+  <line x1="36" y1="132" x2="560" y2="132" stroke="#30363d" stroke-width="1"/>
+  <text x="36"  y="164" font-family="monospace" font-size="26" font-weight="700" fill="#e85d04">216×</text>
+  <text x="36"  y="183" font-family="monospace" font-size="11" fill="#6e7681">faster diff(days)</text>
+  <text x="175" y="164" font-family="monospace" font-size="26" font-weight="700" fill="#58a6ff">332</text>
+  <text x="175" y="183" font-family="monospace" font-size="11" fill="#6e7681">tests passing</text>
+  <text x="290" y="164" font-family="monospace" font-size="26" font-weight="700" fill="#3fb950">0</text>
+  <text x="290" y="183" font-family="monospace" font-size="11" fill="#6e7681">allocs (hot path)</text>
+  <text x="400" y="164" font-family="monospace" font-size="26" font-weight="700" fill="#a371f7">80B</text>
+  <text x="400" y="183" font-family="monospace" font-size="11" fill="#6e7681">ZonedDateTime</text>
+  <rect x="610" y="30" width="268" height="185" fill="#010409" rx="8" stroke="#30363d" stroke-width="1"/>
+  <rect x="610" y="30" width="268" height="26" fill="#161b22" rx="8"/>
+  <rect x="610" y="44" width="268" height="12" fill="#161b22"/>
+  <circle cx="628" cy="43" r="5" fill="#ff5f57"/>
+  <circle cx="644" cy="43" r="5" fill="#febc2e"/>
+  <circle cx="660" cy="43" r="5" fill="#28c840"/>
+  <text x="678" y="47" font-family="monospace" font-size="9" fill="#6e7681">main.rs</text>
+  <text x="624" y="78"  font-family="monospace" font-size="11" fill="#ff7b72">use </text>
+  <text x="649" y="78"  font-family="monospace" font-size="11" fill="#c9d1d9">fastemporal::{ZonedDateTime,</text>
+  <text x="624" y="94"  font-family="monospace" font-size="11" fill="#c9d1d9">    Duration};</text>
+  <text x="624" y="116" font-family="monospace" font-size="11" fill="#ff7b72">let </text>
+  <text x="649" y="116" font-family="monospace" font-size="11" fill="#79c0ff">dt</text>
+  <text x="664" y="116" font-family="monospace" font-size="11" fill="#c9d1d9"> = ZonedDateTime::now()</text>
+  <text x="624" y="132" font-family="monospace" font-size="11" fill="#c9d1d9">    .plus(Duration::</text>
+  <text x="739" y="132" font-family="monospace" font-size="11" fill="#d2a8ff">days</text>
+  <text x="763" y="132" font-family="monospace" font-size="11" fill="#c9d1d9">(7))</text>
+  <text x="624" y="148" font-family="monospace" font-size="11" fill="#c9d1d9">    .in_timezone(</text>
+  <text x="731" y="148" font-family="monospace" font-size="11" fill="#a5d6ff">"UTC"</text>
+  <text x="764" y="148" font-family="monospace" font-size="11" fill="#c9d1d9">)</text>
+  <text x="624" y="164" font-family="monospace" font-size="11" fill="#c9d1d9">    .unwrap();</text>
+  <text x="624" y="186" font-family="monospace" font-size="11" fill="#8b949e">// 2025-06-14T14:32:00.000Z</text>
+  <rect x="36"  y="206" width="52" height="19" fill="#21262d" rx="4" stroke="#30363d" stroke-width="1"/>
+  <text x="62"  y="219" font-family="monospace" font-size="10" fill="#c9d1d9" text-anchor="middle">v0.1.0</text>
+  <rect x="97"  y="206" width="68" height="19" fill="#0d4a1a" rx="4" stroke="#238636" stroke-width="1"/>
+  <text x="131" y="219" font-family="monospace" font-size="10" fill="#3fb950" text-anchor="middle">Rust 1.75+</text>
+  <rect x="174" y="206" width="100" height="19" fill="#1c1c2e" rx="4" stroke="#6e40c9" stroke-width="1"/>
+  <text x="224" y="219" font-family="monospace" font-size="10" fill="#a371f7" text-anchor="middle">MIT / Apache-2.0</text>
+</svg>
